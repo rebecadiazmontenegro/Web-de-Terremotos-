@@ -1,0 +1,16 @@
+:root {
+    --ebony: #4e5340ff;
+    --ebony-2: #697268ff;
+    --cadet-gray: #95a3a4ff;
+    --columbia-blue: #b7d1daff;
+    --alabaster: #e2e8ddff;
+}
+
+#map { 
+    width: 100%;
+    height: 400px;
+}
+
+body {
+    background-color: var(--);
+}
