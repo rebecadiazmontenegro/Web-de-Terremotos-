@@ -19,6 +19,17 @@ async function getData() {
     }
 }
 
+function getColorByMag(mag) {
+    if(mag < 1) return '#f0f0f0';
+    if(mag < 2) return '#1e881a';
+    if(mag < 3) return '#8f911c';
+    if(mag < 4) return '#faf115';
+    if(mag < 5) return '#f6cf1e';
+    if(mag < 6) return '#fb9d16';
+    if(mag < 7) return '#f51919';
+    return '#f71afa';
+}
+
 getData().then(data => {
 
     console.log(data)
@@ -35,24 +46,29 @@ getData().then(data => {
         const titulo = pin.properties.title;
         const tituloSolo = titulo.split(" - ")[0]; //Se queda solo con la primera parte del string
 
-        const marcador = L.marker(pinCoordenadas)
-            .bindPopup(`
-                <p>${tituloSolo}</p>
-                <p>${fechaFormateada}</p>
-                <p>${pin.properties.place}</p>
-                <p>${pin.properties.code}</p>
-                <p>${pin.properties.magType}</p>
-                <button class='favBoton'>Añadir a favoritos</button>`)
-            .addTo(map);
+        const marcador = L.circleMarker(pinCoordenadas, {
+            radius: 8, // tamaño del pin
+            fillColor: getColorByMag(pin.properties.mag), // color según la magnitud
+            color: "#000", // borde negro
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        }).bindPopup(`
+            <p>${tituloSolo}</p>
+            <p>${fechaFormateada}</p>
+            <p>${pin.properties.place}</p>
+            <p>${pin.properties.code}</p>
+            <p>${pin.properties.magType}</p>
+            <button class='favBoton'>Añadir a favoritos</button>
+        `).addTo(map);
 
         marcador.on("popupopen", () => {
             const favBoton = document.querySelector('.favBoton');
             if(favBoton){
                 favBoton.addEventListener("click", () => {
-                    alert("favorito guardado") //Cambiar por Sweet alert
+                    alert("favorito guardado");
                 })
             }
-        })
-        
-    })
-})
+        });
+    });
+});
