@@ -87,3 +87,21 @@ nav ul {
 
 }
 
+
+#mapaDos article{
+    display: flex;                      
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+#mapTwo { 
+    display: flex;
+    width: 1000px;
+    height:500px;
+    border-radius: 16px;
+    background-color: var(--silver);
+    box-shadow: 4px 4px 1px var(--taupe);
+    border-radius: 16px;
+    border: 2px solid var(--taupe);
+}

@@ -34,6 +34,49 @@
             </div>
         </article>
     </section>
+    <section id="mapaDos">
+        <h2>Mapa de informacón con filtros</h2>
+        <article>
+            <div class=filtroMagnitud>
+                <label>Elige el rango de magnitud</label>
+                <select name="filtoMag" id="filtroMag">
+                    <option value="magAll"> Todos </option>
+                    <option value="0"> De 0 a 1</option>
+                    <option value="1"> De 1 a 2</option>
+                    <option value="2"> De 2 a 3</option>
+                    <option value="3"> De 3 a 4</option>
+                    <option value="4"> De 4 a 5</option>
+                    <option value="5"> De 5 a 6</option>
+                    <option value="6"> De 6 a 7</option>
+                    <option value="7"> Mayor a 7</option>
+                </select>
+
+
+            </div>
+            <div class=filtroFecha>
+                <label>Selecciona una fecha</label>
+                <form id="filtroFecha">
+                    <label>Comienzo</label>
+                    <input
+                        type="date"
+                        id="fechaComienzo"
+                        name="fechaComienzo"
+                        required
+                    />
+                    <label>Final</label>
+                    <input
+                        type="date"
+                        id="fechaFinal"
+                        name="fechaFinal"
+                        required
+                    />
+                    <button class="botonFecha">Filtrar</button>
+                </form>
+            </div>
+            <div id="mapTwo">
+            </div>
+        </article>
+    </section>
     <script src="./js/script.js"></script>
 </body>
 </html>
