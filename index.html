@@ -15,27 +15,53 @@
 </head>
 <header>
     <nav id="navegador>">
+    <p>Descubre los terremotos del mundo</p>
         <ul>
             <li>Home</li>
-            <li>Mapas interactivos</li>
+            <li>Mapas</li>
             <li>Información</li>
         </ul>
     </nav>
 </header>
 <body>
+<main>
+    <section id="registro">
+        <button id="registrar">Crear cuenta</button>
+        <button id="login">Log in</button>
+        <div id="contenedor-form"></div>
+    </section>
+    <section id="users">
+    </section>
+    
     <section id="mapaUno">
-        <h2>Mapa de información de terremotos</h2>
+        <h2>Mapa de terremotos</h2>
+        <div class="botonLeyenda">
+            <div class="botones">
+                <button id="allTerremotos">Todos los terremotos</button>
+                <button id="favTerremotos">Terremotos favoritos</button>
+            </div>
+            <aside class="leyenda">
+                <h3>Leyenda</h3>
+                <ul>
+                    <li><span style="background-color: #f0f0f0;"></span> Magnitud de 0 a 1</li>
+                    <li><span style="background-color: #1e881a;"></span> Magnitud de 1 a 2</li>
+                    <li><span style="background-color: #8f911c;"></span> Magnitud de 2 a 3</li>
+                    <li><span style="background-color: #faf115;"></span> Magnitud de 3 a 4</li>
+                    <li><span style="background-color: #f6cf1e;"></span> Magnitud de 4 a 5</li>
+                    <li><span style="background-color: #fb9d16;"></span> Magnitud de 5 a 6</li>
+                    <li><span style="background-color: #f51919;"></span> Magnitud de 6 a 7</li>
+                    <li><span style="background-color: #f71afa;"></span> Mayor de 7</li>
+                </ul>
+            </aside>
+        </div>
         <article>
             <div id="map">
             </div>
-            <div class=informacion>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis reprehenderit dolore corporis nihil assumenda tenetur, ullam consequuntur tempora iste aliquid nesciunt, deleniti omnis voluptate vero maxime hic temporibus in quod.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis reprehenderit dolore corporis nihil assumenda tenetur, ullam consequuntur tempora iste aliquid nesciunt, deleniti omnis voluptate vero maxime hic temporibus in quod.</p>
-            </div>
         </article>
     </section>
+
     <section id="mapaDos">
-        <h2>Mapa de informacón con filtros</h2>
+        <h2>Mapa de terremotos con filtros</h2>
         <article>
             <div class=filtroMagnitud>
                 <label>Elige el rango de magnitud</label>
@@ -50,26 +76,30 @@
                     <option value="6"> De 6 a 7</option>
                     <option value="7"> Mayor a 7</option>
                 </select>
-
-
             </div>
-            <div class=filtroFecha>
+            <div class=filtroPorFechas>
                 <label>Selecciona una fecha</label>
                 <form id="filtroFecha">
-                    <label>Comienzo</label>
-                    <input
-                        type="date"
-                        id="fechaComienzo"
-                        name="fechaComienzo"
-                        required
-                    />
-                    <label>Final</label>
-                    <input
-                        type="date"
-                        id="fechaFinal"
-                        name="fechaFinal"
-                        required
-                    />
+                <div class="startToEnd">
+                    <aside class="comienzo">
+                        <label>Comienzo</label>
+                        <input
+                            type="date"
+                            id="fechaComienzo"
+                            name="fechaComienzo"
+                            required
+                        />
+                    </aside>
+                    <aside class="final">
+                        <label>Final</label>
+                        <input
+                            type="date"
+                            id="fechaFinal"
+                            name="fechaFinal"
+                            required
+                        />
+                    </aside>
+                </div>
                     <button class="botonFecha">Filtrar</button>
                 </form>
             </div>
@@ -77,6 +107,11 @@
             </div>
         </article>
     </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
