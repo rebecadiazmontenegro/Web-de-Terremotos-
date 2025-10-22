@@ -470,11 +470,11 @@ flex-direction: column;
         padding: 16px 24px;
         justify-content: space-between;
         width: 800px;
-        background-color: var(--taupe);
+        background-color: var(--isabelline);
         box-shadow: 4px 4px 1px var(--taupe);
-        color: var(--isabelline);
+        color: var(--taupe);
         border-radius: 8px;
-        border: 2px solid var(--isabelline);
+        border: 2px solid var(--taupe);
         font-size: 24px;
         font-weight: var(--font-medium);
   }

@@ -2,6 +2,8 @@
 
 ## 💨 Introducción
 
+Esta web permite visualizar terremotos recientes en un mapa interactivo, mostrando información relevante de cada evento. El proyecto combina manipulación dinámica del DOM, consumo de APIs y la posibilidad de integrar Firebase para almacenamiento y gestión de datos en tiempo real.
+
 ## 📂 Requisitos para este proyecto
 
 - Manipulación dinámica del DOM
@@ -16,17 +18,15 @@
 - Otras APIs, Local Storage, Firebase, PWA...
 - En general, cualquier extra será bien recibido para que investiguéis por vuestra cuenta, siempre y cuando tenga sentido
 
-## ⏳ Fases del proyecto
-### 1. Dibujar en un mapa utilizando Leaflet las coordenadas de posiciones donde hay terremot
+## 🎯 Objetivos
 
-**Tareas:**
-
-- Petición HTTP para obtener los terremotos disponibles en la API
-- Dibujar los marcadores de cada terremoto en el mapa
-- Añadir popup en cada marcador con los siguientes datos:
-  - Título
-  - Fecha del evento
-  - Ubicación
-  - Código
-  - Magnitud con el tipo de medida
-- Personalizar iconos por color para los marcadores según la magnitud del terremoto (colores entre 0-7)
+| Objetivo | Definición | Estado |
+|----------|------------|--------|
+| Mapa 1 | Mostrar terremotos en Leaflet con popup y marcadores coloreados según magnitud | ✅ |
+| Mapa 2 | Filtrar terremotos por magnitud y fechas de inicio/fin | ✅ |
+| Favoritos | Guardar terremotos favoritos en Firebase Firestore desde el popup | ⬜ |
+| Botones vista | Alternar entre vista de API y favoritos | ⬜ |
+| Gestión favoritos | Eliminar favoritos y evitar duplicados | ⬜ |
+| Autenticación | Solo usuarios autenticados pueden guardar favoritos | ⬜ |
+| Privacidad | Cada usuario ve únicamente sus propios favoritos | ⬜ |
+| Carga y visualización | Animación durante la carga y mostrar ambos mapas al iniciar | ⬜ |
