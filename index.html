@@ -14,25 +14,30 @@
     <title>Terremotos around the world</title>
 </head>
 <header>
-    <nav id="navegador>">
     <p>Descubre los terremotos del mundo</p>
+    <img src="./assets/logo.png" />
+    <nav id="navegador">
         <ul>
-            <li>Home</li>
-            <li>Mapas</li>
-            <li>Información</li>
+            <li>
+                <a href="#mapaUno">Mapa principal</a>
+            </li>
+            <li>
+                <a href="#mapaDos">Mapa de filtros</a>
+            </li>
         </ul>
     </nav>
 </header>
 <body>
 <main>
     <section id="registro">
-        <button id="registrar">Crear cuenta</button>
-        <button id="login">Log in</button>
+        <div class="botonesRegistro">
+            <button id="registrar">Crear cuenta</button>
+            <button id="login">Log in</button>
+        </div>
         <div id="contenedor-form"></div>
     </section>
     <section id="users">
     </section>
-    
     <section id="mapaUno">
         <h2>Mapa de terremotos</h2>
         <div class="botonLeyenda">
@@ -99,14 +104,17 @@
                             required
                         />
                     </aside>
-                </div>
                     <button class="botonFecha">Filtrar</button>
+                </div>
                 </form>
             </div>
             <div id="mapTwo">
             </div>
         </article>
     </section>
+    <footer>
+        <p>Política de privacidad</p>
+    </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>

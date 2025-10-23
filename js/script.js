@@ -44,7 +44,7 @@ const signUpUser = (email, password, name) => {
         Swal.fire({
           icon: "success",
           title: "Registro completado",
-          text: "Se ha registrado ${user.email}`."
+          text: `Se ha registrado ${user.email}.`
         });
     
 
@@ -184,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
           placeholder="Introduce tu nombre de usuario"
           required
         />
+        <p id="mensajeName"></p>
         <label>Correo electrónico</label>
         <input
           type="email"
@@ -200,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
           placeholder="Introduce password..."
           required
         />
+        <p id="mensajePass"></p>
         <label>Repite password:</label>
         <input
           type="password"
@@ -244,30 +246,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Formulario de registro
     if (event.target.classList.contains("registroUsuario")) { 
-      const name = event.target.elements.name.value;
+      const name = event.target.elements.name.value.trim();
       const email = event.target.elements.email.value;
       const pass = event.target.elements.pass.value;
       const pass2 = event.target.elements.pass2.value;
-    
-      if (pass === pass2 && pass.length >= 6) { 
-        signUpUser(email, pass, name);
-        contenedor.innerHTML = "";
 
-      } else {
+      const nameInput = document.getElementById("name");
+      const passInput = document.getElementById("pass");
+
+      const mensajeName = document.getElementById("mensajeName");
+      const mensajePass = document.getElementById("mensajePass");
+
+      // Regex
+      const regexName = /^(?!\s*$).+/; // No solo espacios
+      const regexPass = /^[A-Za-z\d]{6,}$/; 
+      // Al menos una mayúscula, una minúscula, un número y mínimo 6 caracteres
+
+      // Validar nombre
+      if (!regexName.test(name)) {
+          Swal.fire({
+                icon: "error",
+                title: "Nombre no válido",
+                text: "El nombre debe tener al menos un carácter",
+            });
+        return;
+      }
+
+      // Validar contraseña
+      if (!regexPass.test(pass)) {
+        Swal.fire({
+                icon: "error",
+                title: "Contraseña no es válida",
+                text: "La contraseña debe tener números, letras y un mínimo de 6 carácteres",
+            });
+        return;
+      }
+
+      // Confirmar contraseña
+      if (pass !== pass2) {
         Swal.fire({
           icon: "error",
-          title: "Contraseña no válida",
-          text: "La contraseña debe tener al menos 6 dígitos",
+          title: "Contraseña no coincide",
+          text: "Las contraseñas deben coincidir",
         });
+        return;
       }
+
+      // Si todo es válido, crear usuario
+      signUpUser(email, pass, name);
+      contenedor.innerHTML = "";
     }
 
     // Formulario de login
     if (event.target.classList.contains("loginUser")) { 
       const email = event.target.elements.emailLog.value;
       const password = event.target.elements.passwordLog.value;
-      
-    signInAndOutUser(email,password);
+      signInAndOutUser(email, password);
     }
   });
 });
@@ -341,6 +375,7 @@ function mostrarTodosLosTerremotos(data) {
             <p>${pin.properties.place}</p>
             <p>${pin.properties.code}</p>
             <p>${pin.properties.magType}</p>
+            <a href = "${pin.properties.url}" target=_blank>Pulsa aquí para acceder al punto</a>
             <button class='favBoton'>Añadir a favoritos</button>
         `).addTo(map);
 
@@ -385,7 +420,8 @@ function addFavorite(pin) {
         place: pin.properties.place,
         mag: pin.properties.mag,
         time: pin.properties.time,
-        coordinates: pin.geometry.coordinates
+        coordinates: pin.geometry.coordinates,
+        link: pin.properties.url
     };
 
     const userRef = db.collection("users-terremotos").doc(user.uid);
