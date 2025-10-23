@@ -446,7 +446,7 @@ img {
 
 .comienzo,
 .final {
-    flex: 1 1 45%;         /* los dos inputs ocupan espacio lado a lado */
+    flex: 1 1 45%; /* los dos inputs ocupan espacio lado a lado */
 }
 
 #filtroFecha label {
@@ -499,12 +499,9 @@ footer {
   border-top-right-radius: 16px;
 }
 
-
+/* --------------- Media querys --------------- */
 
 @media screen and (min-width: 882px) {
-
-
-
 
     .leyenda {
         width: 96%;
@@ -528,8 +525,6 @@ footer {
     .filtroMagnitud {
     margin-top: 27px;
 }
-
-    
 
 }
 
