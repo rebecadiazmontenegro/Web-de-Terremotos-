@@ -49,7 +49,7 @@ Esta web ha sido desarrollada para que puedas navegar, descubrir y guardas tus t
 
 ## 🖥️ Link para Github Pages
 
-https://rebecadiazmontenegro.github.io/practica-peliculas/
+https://rebecadiazmontenegro.github.io/Web-de-Terremotos-/
 
 ## 👩🏼‍💻 Autora
 - Nombre: Rebeca
