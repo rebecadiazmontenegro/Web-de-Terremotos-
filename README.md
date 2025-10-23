@@ -46,3 +46,12 @@ Esta web ha sido desarrollada para que puedas navegar, descubrir y guardas tus t
 | Autenticación | Solo usuarios autenticados pueden guardar favoritos | Conseguido ✅ |
 | Privacidad | Cada usuario ve únicamente sus propios favoritos | Conseguido ✅ |
 | Carga y visualización | Animación durante la carga y mostrar ambos mapas al iniciar | ⬜ |
+
+## 🖥️ Link para Github Pages
+
+https://rebecadiazmontenegro.github.io/practica-peliculas/
+
+## 👩🏼‍💻 Autora
+- Nombre: Rebeca
+- Apellidos: Díaz-Montenegro Sánchez
+- Linkdin: https://www.linkedin.com/in/rebeca-diaz-montenegro-s%C3%A1nchez-818515245/
