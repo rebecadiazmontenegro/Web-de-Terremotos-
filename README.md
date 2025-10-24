@@ -30,6 +30,16 @@ Esta web ha sido desarrollada para que puedas navegar, descubrir y guardas tus t
 - Otras APIs, Local Storage, Firebase, PWA...
 - En general, cualquier extra será bien recibido para que investiguéis por vuestra cuenta, siempre y cuando tenga sentido
 
+## 🛠️ Herramientas
+
+- Java Script 
+- HTML
+- CSS
+- Fire Base
+- Leaflet
+- Sweet Alert
+
+
 ## Diseño mobile first y responsive
 
 ![MockUp](./assets/mockup.png)
